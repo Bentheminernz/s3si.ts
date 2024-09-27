@@ -37,7 +37,7 @@ async function checkResponse(resp: Response) {
 }
 
 class SplashcatAPI {
-  splashcat = "https://splashcat.ink";
+  splashcat = "https://127.0.0.1:8000";
   FETCH_LOCK = new Mutex();
   cache: Record<string, unknown> = {};
 
@@ -157,7 +157,7 @@ export class SplashcatExporter implements GameExporter {
       return {
         status: "success",
         url: resp.battle_id
-          ? `https://splashcat.ink/battles/${resp.battle_id}/`
+          ? `https://127.0.0.1:8000/battles/${resp.battle_id}/`
           : undefined,
       };
     } else {
